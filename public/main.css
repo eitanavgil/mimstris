@@ -1,20 +1,19 @@
 html {
-  background: #371b52;
-  /* Stop scrolling issue on short monitors */
-  overflow-y: hidden;
+	background: #7b8d5d;
+	/* Stop scrolling issue on short monitors */
+	overflow-y: hidden;
 }
 body {
-  color: #fff;
-  font-family: montserrat, helvetica, arial, sans-serif;
+	color: #fff;
+	font-family: helvetica, arial, sans-serif;
 }
 main {
-  margin: 4em auto;
+	margin: 4em auto;
+	margin-top: 0;
 }
 
 h1 {
-  font-weight: normal;
-  font-size: 24px;
-  padding: 1rem;
+	font-weight: normal;
 }
 
 a,
@@ -22,124 +21,142 @@ a:link,
 a:hover,
 a:active,
 a:visited {
-  color: #11c5bf;
-  text-decoration: underline;
+	color: #11c5bf;
+	text-decoration: underline;
 }
 a:link {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 button {
-  background: transparent;
-  border: 1px solid #fff;
-  color: #fff;
-  font-family: montserrat, helvetica, arial, sans-serif;
+	background: transparent;
+	border: 1px solid #fff;
+	color: #fff;
+	font-family: arial, sans-serif;
 
-  padding: 0.5rem 1rem;
-  cursor: pointer;
+	padding: 0.5rem 1rem;
+	cursor: pointer;
 }
 button:hover {
-  background: #fff;
-  color: #371b52;
+	background: #fff;
 }
 button:focus {
-  outline: 0;
+	outline: 0;
 }
 .undoButton {
-  margin-bottom: 1rem;
+	margin-bottom: 1rem;
 }
 
 .instructions {
-  font-size: 10px;
-  color: rgba(255, 255, 255, 0.3);
+	font-size: 10px;
+	color: rgba(255, 255, 255, 0.3);
 }
 .app {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 0;
 }
 .scoreWrapper {
-  flex: 0 1 auto;
-  order: 2;
-  margin-left: 1rem;
+	flex-direction: row;
+}
+.scoreboard {
+	position: absolute;
+	top: 0.5rem;
+	z-index: 222;
 }
 .scoreboardText {
-  min-width: 10rem;
+	display: flex;
+	flex-direction: row-reverse;
+	min-width: 10rem;
 }
 
 .gameWrapper {
-  flex: 0 1 auto;
-  order: 1;
-  position: relative;
+	flex: 0 1 auto;
+	order: 1;
+	position: relative;
+}
+.nextPiece h3 {
+	padding-left: 30px;
+	margin-bottom: 0;
+	margin-top: 0;
+}
+.nextPiece {
+	transform: scale(0.8);
+	position: absolute;
+	top: 0rem;
+	z-index: 222;
+	left: 7.5rem;
 }
 .nextPiece canvas {
-  transform-origin: top left;
-  transform: scale(0.5);
+	opacity: 0.4;
+	transform: scale(0.8);
 }
 
 .configPanel {
-  font-size: 10px;
+	font-size: 10px;
 }
 .configPanel h3 {
-  display: inline-block;
-  margin: 0 0 0.5rem 0.5rem;
-  font-size: 12px;
-  font-weight: normal;
-  cursor: pointer;
+	display: inline-block;
+	margin: 0 0 0.5rem 0.5rem;
+	font-size: 12px;
+	font-weight: normal;
+	cursor: pointer;
 }
 .configPanel h3:hover {
-  text-decoration: underline;
+	text-decoration: underline;
 }
 .configPanel button {
-  border: none;
-  background: transparent;
-  color: white;
-  font-size: 14px;
-  cursor: pointer;
-  padding: 0;
-  margin: 0;
+	border: none;
+	background: transparent;
+	color: white;
+	font-size: 14px;
+	cursor: pointer;
+	padding: 0;
+	margin: 0;
 }
 .configPanel ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 .configPanel div {
-  margin-bottom: 0.5rem;
+	margin-bottom: 0.5rem;
 }
 .configOptions {
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  padding: 0.5rem;
+	border: 1px solid rgba(255, 255, 255, 0.6);
+	padding: 0.5rem;
 }
 .configPanelText label {
-  display: block;
+	display: block;
 }
 .configPanelText input {
-  background: #00263f;
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 0.25rem;
+	background: #00263f;
+	color: white;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	padding: 0.25rem;
 }
 
 .credits {
-  font-size: 10px;
+	font-size: 10px;
 }
 
 .modalText {
-  position: absolute;
-  top: 45%;
-  left: 0;
-  width: 100%;
-  margin: auto 0;
-  padding: 1rem 0;
+	position: absolute;
+	top: 45%;
+	left: 0;
+	width: 100%;
+	margin: auto 0;
+	padding: 1rem 0;
 
-  background: rgba(50, 50, 50, 0.4);
-  color: #ffffff;
-  font-size: 24px;
-  text-align: center;
-  vertical-align: middle;
+	background: rgba(50, 50, 50, 0.4);
+	color: #ffffff;
+	font-size: 24px;
+	text-align: center;
+	vertical-align: middle;
 }
 .modalText .modalSubText {
-  margin-top: 12px;
-  font-size: 12px;
+	margin-top: 12px;
+	font-size: 12px;
 }
