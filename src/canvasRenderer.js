@@ -73,6 +73,12 @@ function drawPiece(context, piece) {
 	drawMatrix(context, piece.matrix, piece.x, piece.y);
 }
 
+const sm1 = 0.25;
+const sm2 = 0.75;
+
+const ssm1 = 0.15;
+const ssm2 = 0.85;
+
 /**
  * Draw a single block. Each matrix (board or piece) is composed of many blocks.
  */
@@ -86,40 +92,40 @@ function drawBlock(context, row, column, color, outlinePieces = true) {
 	// fill block
 	context.fillStyle = color;
 
-	if (isMidnightMode()) {
-		const SIZE = 0.2;
-		const BORDER = width * ((1.0 - SIZE) / 2);
-		const RADIUS = (width * SIZE) / 2;
-		context.beginPath();
-		context.arc(x + BORDER, y + BORDER, RADIUS, 0, Math.PI * 2);
-		context.fill();
-		return;
-	} else {
-		context.fillRect(x, y, width, height);
-	}
+	context.fillRect(x, y, width, height);
 
 	// outline block
-	if (config.outlinePieces && outlinePieces) {
-		context.beginPath();
-		context.strokeStyle = config.backgroundColor;
-		context.lineWidth = config.blockSize * config.outlineThickness;
-		context.moveTo(x, y);
-		context.lineTo(x + width, y);
-		context.lineTo(x + width, y + height);
-		context.lineTo(x, y + height);
-		context.lineTo(x, y);
-		context.stroke();
-	}
+	context.beginPath();
+	context.strokeStyle = config.backgroundColor;
+	context.lineWidth = config.blockSize * config.outlineThickness;
+	context.moveTo(x, y);
+	context.lineTo(x + width, y);
+	context.lineTo(x + width, y + height);
+	context.lineTo(x, y + height);
+	context.lineTo(x, y);
+	context.stroke();
 
 	// highlight blockSize
 	if (config.showBlockHighlight) {
 		context.beginPath();
 		context.globalAlpha = 0.8;
-		context.fillStyle = '#FFFFFF';
-		context.moveTo(x + width * 0.1, y + height * 0.1);
-		context.lineTo(x + width * 0.1, y + height * 0.4);
-		context.lineTo(x + width * 0.4, y + height * 0.1);
-		context.lineTo(x + width * 0.1, y + height * 0.1);
+		context.fillStyle = '#9ead86';
+		context.moveTo(x + width * ssm1, y + height * ssm1);
+		context.lineTo(x + width * ssm1, y + height * ssm2);
+		context.lineTo(x + width * ssm2, y + height * ssm2);
+		context.lineTo(x + width * ssm2, y + height * ssm1);
+		context.fill();
+
+		context.globalAlpha = 1.0;
+	}
+	if (config.showBlockHighlight) {
+		context.beginPath();
+		context.globalAlpha = 0.8;
+		context.fillStyle = '#000000';
+		context.moveTo(x + width * sm1, y + height * sm1);
+		context.lineTo(x + width * sm1, y + height * sm2);
+		context.lineTo(x + width * sm2, y + height * sm2);
+		context.lineTo(x + width * sm2, y + height * sm1);
 		context.fill();
 
 		context.globalAlpha = 1.0;

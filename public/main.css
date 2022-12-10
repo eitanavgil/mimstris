@@ -64,12 +64,15 @@ button:focus {
 .scoreboard {
 	position: absolute;
 	top: 0.5rem;
-	z-index: 222;
+	right: 1rem;
+	font-size: 2rem;
 }
 .scoreboardText {
 	display: flex;
 	flex-direction: row-reverse;
-	min-width: 10rem;
+	font-size: 3rem;
+	letter-spacing: 0.1rem;
+	color: black;
 }
 
 .gameWrapper {
@@ -85,12 +88,12 @@ button:focus {
 .nextPiece {
 	transform: scale(0.8);
 	position: absolute;
-	top: 0rem;
-	z-index: 222;
-	left: 7.5rem;
+	top: -2rem;
+	left: -2rem;
+	/* left: 7.5rem; */
 }
 .nextPiece canvas {
-	opacity: 0.4;
+	opacity: 0.7;
 	transform: scale(0.8);
 }
 

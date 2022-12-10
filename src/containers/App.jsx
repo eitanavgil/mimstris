@@ -7,12 +7,8 @@ import { getPlayMusic } from '../stores/config.js';
 
 import Game from './Game';
 import Scoreboard from './Scoreboard';
-import StatusMessage from './StatusMessage';
 import NextPiece from './NextPiece';
-import ConfigPanel from './ConfigPanel';
 import Music from './Music';
-
-import Instructions from '../components/Instructions';
 
 const [BOARD_WIDTH, BOARD_HEIGHT] = config.boardSize;
 const CANVAS_WIDTH = BOARD_WIDTH * config.blockSize;
@@ -33,18 +29,10 @@ const mapDispatchToProps = dispatch => ({
 
 const App = props => (
 	<div className="app">
-		<div className="scoreWrapper">
-			<NextPiece width={NEXT_WIDTH} height={NEXT_HEIGHT} />
-			<Scoreboard />
-			{/* {config.allowUndo ? (
-        <button className="undoButton" onClick={props.onUndoClick}>
-        Undo
-        </button>
-        ) : null}
-      <ConfigPanel /> */}
-		</div>
 		<div className="gameWrapper" style={{ width: CANVAS_WIDTH, height: CANVAS_HEIGHT }}>
 			<Game width={CANVAS_WIDTH} height={CANVAS_HEIGHT} />
+			<NextPiece width={NEXT_WIDTH} height={NEXT_HEIGHT} />
+			<Scoreboard />
 			<Music isPlaying={props.musicPlaying} />
 		</div>
 	</div>

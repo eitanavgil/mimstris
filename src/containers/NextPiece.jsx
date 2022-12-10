@@ -16,7 +16,6 @@ const NextPiece = props => {
 
 	return (
 		<div className="nextPiece" style={style}>
-			<h3>המופע הבא</h3>
 			<Piece {...props} />
 		</div>
 	);
