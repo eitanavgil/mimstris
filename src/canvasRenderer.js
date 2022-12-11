@@ -37,6 +37,7 @@ function drawGuideLines(context) {
 	const [BOARD_WIDTH] = config.boardSize;
 	let x = 0;
 
+	// make backgroung pattern here
 	context.fillStyle = config.guideColor;
 	while (x < BOARD_WIDTH) {
 		if (x % 2 === 0) {
